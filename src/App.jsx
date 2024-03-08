@@ -11,9 +11,8 @@ import skills from "./content/skills";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import blogPosts from "./content/blogPosts";
 import ContactForm from "./components/ContactForm";
-import BlogPost from "./components/BlogPost";
+
 
 function App() {
   const controls = useAnimation();
@@ -52,6 +51,23 @@ function App() {
       />
       <div className="hr"></div>
 
+      <section id="skills">
+        <Heading firstWord="Skills" secondWord="&Tools" />
+        <motion.div
+          className="skill-map"
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={containerVariants}
+        >
+          {skills.map((skill, index) => (
+            <motion.div key={index} variants={skillVariants}>
+              <Skill skill={skill} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
       <section id="projects">
         <Heading firstWord="My" secondWord="Projects" />
         <motion.div
@@ -73,39 +89,6 @@ function App() {
             </div>
           ))}
         </motion.div>
-      </section>
-      <section id="skills">
-        <Heading firstWord="Skills" secondWord="&Tools" />
-        <motion.div
-          className="skill-map"
-          ref={ref}
-          initial="hidden"
-          animate={controls}
-          variants={containerVariants}
-        >
-          {skills.map((skill, index) => (
-            <motion.div key={index} variants={skillVariants}>
-              <Skill skill={skill} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-      <section id="blog">
-        <Heading firstWord="My" secondWord="Blog" />
-        <div className="posts">
-          {blogPosts.map((post, index) => (
-            <BlogPost
-              key={index}
-              title={post.title}
-              image={post.image}
-              read={post.link}
-              date={post.pubDate}
-            />
-          ))}
-        </div>
-        <a className="cyber-scourge" href="https://blog.randiltharusha.me">
-          View More Posts
-        </a>
       </section>
       <section id="contact">
         <Heading firstWord="Contact" secondWord="Me" />

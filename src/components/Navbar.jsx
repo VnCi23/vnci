@@ -19,17 +19,13 @@ const Navbar = (props) => {
         </label>
         <ul className="menu">
           <li>
-            <a href="#">About</a>
-          </li>
-
-          <li>
-            <a href="#projects">Projects</a>
+            <a href="#">Home</a>
           </li>
           <li>
             <a href="#skills">Skills</a>
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
             <a href="#contact" className="navbar-btn">

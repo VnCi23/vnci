@@ -4,9 +4,6 @@ const Heading = (props) => {
   return (
     <div className="heading hero-text">
       <h1>
-        &lt;
-        {props.firstWord}
-        <span>{props.secondWord}/&gt;</span>
       </h1>
     </div>
   );
