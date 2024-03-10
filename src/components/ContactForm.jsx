@@ -30,7 +30,7 @@ const ContactForm = () => {
           <br />
           <p className="contact-links">
             <FaPhoneAlt />
-            +63912345678
+            +639602734749
           </p>
           <br />
           <p className="contact-links">
